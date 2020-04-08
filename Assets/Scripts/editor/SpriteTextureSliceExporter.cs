@@ -45,7 +45,7 @@ public class SpriteTextureSliceExporter : ScriptableObject
             foreach (var sprite in sprites) {
                 Debug.Log($"ExportSlicesContext inner loop, {sprite.GetType()} = {sprite}");
                 var tex = sprite.texture;
-                var r = sprite.textureRect;
+                var r = sprite.rect;
                 var subtex = tex.CropTexture( (int)r.x, (int)r.y, (int)r.width, (int)r.height );
                 var data = subtex.EncodeToPNG();
                 var outPath = $"{outputDirectory}/{sprite.name}.png";
